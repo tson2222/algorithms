@@ -5,9 +5,8 @@ import java.util.*;
 public class Knapsack {
 
     public static void main(String[] args) {
-        // Item = {value,weight}
         // Item number     #0      #1      #2      #3
-        int[][] items = {{1, 2}, {3, 4}, {6, 6}, {11, 8}};
+        int[][] items = {{1, 2}, {3, 4}, {6, 6}, {11, 8}}; // Item = {value,weight}
         List<List<Integer>> result = knapsackProblem(items, 10);
         // print out the value + the indices of the items
         System.out.println("Maximum worth of Knapsack without exceeding capacity is " + result.get(0) +
