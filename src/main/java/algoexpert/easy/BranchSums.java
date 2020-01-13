@@ -5,13 +5,18 @@ import java.util.*;
 public class BranchSums {
 
 
+    // Calculate sum of those 4 branches.
+       //    2   \\
+      //   5    7   \\
+     //  0   44   1  22 \\
+    // #1  #2  #3  #4
     public static void main(String[] args) {
         BinaryTree left = new BinaryTree(5);
-        BinaryTree right = new BinaryTree(77);
+        BinaryTree right = new BinaryTree(7);
         BinaryTree left2 = new BinaryTree(0);
         BinaryTree right2 = new BinaryTree(44);
         BinaryTree left3 = new BinaryTree(1);
-        BinaryTree right3 = new BinaryTree(2222);
+        BinaryTree right3 = new BinaryTree(22);
         left.left = left2;
         left.right = right2;
         right.left = left3;

@@ -1,4 +1,4 @@
-package algoexpert;
+package algoexpert.hard;
 
 import java.util.*;
 

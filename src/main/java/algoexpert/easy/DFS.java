@@ -5,7 +5,7 @@ import java.util.*;
 class DFS {
 
     public static void main(String[] args) {
-// Order should be A, B, X, D, C, M, Y, T, T, U (left to right, DEPTH FIRST)
+// Order should be A, B, X, D, C, M, Y, T  (left to right, DEPTH FIRST)
                 // A \\
               // B D Y \\
             //  X  C  T \\
@@ -41,7 +41,7 @@ class DFS {
         public Node addChild(String name) {
             Node child = new Node(name);
             children.add(child);
-            // does NOT return the child node! But the beginning Node.
+            // does NOT return the child node! But the current Node.
             return this;
         }
     }
