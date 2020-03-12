@@ -12,15 +12,16 @@ public class RiverSizes {
                 {1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0},
                 {0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1},
                 {1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0},
-                {1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1},
-        };
-        int[][] twoDimArr = {
+                {1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1},};
+
+        int[][] input2 = {
                 { 1, 0, 0, 1, 0 },
                 { 1, 0, 1, 0, 0 },
                 { 0, 0, 1, 0, 1 },
                 { 1, 0, 1, 0, 1 },
                 { 1, 0, 1, 1, 0 } };
         riverSizes(input).forEach(System.out::println);
+        riverSizes(input2).forEach(System.out::println);
     }
 
     public static List<Integer> riverSizes(int[][] matrix) {
