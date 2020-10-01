@@ -8,16 +8,15 @@ class DFS {
 // Order should be A, B, X, D, C, M, Y, T  (left to right, DEPTH FIRST)
                 // A \\
               // B D Y \\
-            //  X  C  T \\
+            //X Z  C  T \\
           //       M      \\
 
         DFS.Node test1 = new DFS.Node("A");
         test1.addChild("B").addChild("D").addChild("Y");
-        test1.children.get(0).addChild("X");
+        test1.children.get(0).addChild("X").addChild("Z");
         test1.children.get(1).addChild("C");
         test1.children.get(1).addChild("M");
         test1.children.get(2).addChild("T");
-        System.out.println(test1.children.get(1).children.get(0).name);
         System.out.println(test1.depthFirstSearch(new ArrayList<>()));
 
     }
@@ -33,6 +32,7 @@ class DFS {
         public List<String> depthFirstSearch(List<String> array) {
             array.add(this.name);
             for (int i = 0; i < children.size(); i++) {
+                System.out.println(children.get(i).name);
                 children.get(i).depthFirstSearch(array);
             }
             return array;
