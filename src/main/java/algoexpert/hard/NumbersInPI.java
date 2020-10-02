@@ -28,7 +28,7 @@ public class NumbersInPI {
         }));
     }
 
-    static Map<String, Index> hashmap;
+    static Map<String, Integer> hashmap;
 
     static List<Integer> counts;
 
@@ -40,12 +40,12 @@ public class NumbersInPI {
         Arrays.stream(numbers).forEach(
                 number -> {
                     if (pi.contains(number)) {
-                        hashmap.put(number, new Index(pi.indexOf(number), pi.indexOf(number) + number.length()));
+                        hashmap.put(number, pi.indexOf(number));
                     }
                 });
         //hashmap.forEach((key, value) -> System.out.println(key + " -> " + value.start + "," + value.end));
-        List<Map.Entry> indices = hashmap.entrySet().stream().filter(entry -> entry.getValue().start == 0).collect(Collectors.toList());
-        for (Map.Entry<String, Index> entry : indices) {
+        List<Map.Entry> indices = hashmap.entrySet().stream().filter(entry -> entry.getValue() == 0).collect(Collectors.toList());
+        for (Map.Entry<String, Integer> entry : indices) {
             count = 0;
             System.out.println("KEY: " + entry.getKey());
             List<String> nums = new CopyOnWriteArrayList<>(numbers);
@@ -72,12 +72,12 @@ public class NumbersInPI {
         Arrays.stream(numbers).forEach(
                 number -> {
                     if (pi.contains(number)) {
-                        hashmap.put(number, new Index(pi.indexOf(number), pi.indexOf(number) + number.length()));
+                        hashmap.put(number, pi.indexOf(number));
                     }
                 });
-        hashmap.forEach((key, value) -> System.out.println(key + " -> " + value.start + "," + value.end));
-        List<Map.Entry> indices = hashmap.entrySet().stream().filter(entry -> entry.getValue().start == 0).collect(Collectors.toList());
-        for (Map.Entry<String, Index> entry : indices) {
+        hashmap.forEach((key, value) -> System.out.println(key + " -> " + value));
+        List<Map.Entry> indices = hashmap.entrySet().stream().filter(entry -> entry.getValue() == 0).collect(Collectors.toList());
+        for (Map.Entry<String, Integer> entry : indices) {
             System.out.println("KEY: " + entry.getKey());
             List<String> nums = new CopyOnWriteArrayList<>(numbers);
             //nums.remove(entry.getKey());
@@ -85,15 +85,6 @@ public class NumbersInPI {
             String piVal = pi.replaceFirst(entry.getKey(), "");
             count++;
             numbersInPiRecursive(piVal, arr);
-        }
-    }
-
-        static class Index {
-        int start, end;
-
-        public Index(final int start, final int end) {
-            this.start = start;
-            this.end = end;
         }
     }
 
