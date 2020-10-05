@@ -1,4 +1,4 @@
-package algoexpert.hard;
+package algoexpert.veryhard;
 
 import java.util.HashMap;
 import java.util.LinkedList;
